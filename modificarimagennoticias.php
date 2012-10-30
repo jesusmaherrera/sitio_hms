@@ -11,6 +11,7 @@
 ?>
 
 <div align="center">
+     Por favor selecciona una imagen tipo .jpg <b>"Si el tipo de la imagen es .JPG tendrás que convertirlo a .jpg"</b>
  <form id="form1" method="post" action="modificarimagennoticias1.php" enctype="multipart/form-data">
                               
                                 	<input type="hidden" name="id" id="id" value="<?php echo $id;?>"/>

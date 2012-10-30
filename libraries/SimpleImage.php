@@ -52,7 +52,6 @@ class SimpleImage {
          imagepng($this->image,$filename);
       }
       if( $permissions != null) {
- 
          chmod($filename,$permissions);
       }
    }

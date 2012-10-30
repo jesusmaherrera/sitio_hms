@@ -22,13 +22,30 @@ include ('ingreso.php');
 
     $tamano = $_FILES['imagen']['size'];
 
+ $nombre = $_FILES['imagen']['name'];
+  $tmpname = $_FILES['imagen']['tmp_name'];
+  
+  $partes=explode('.',$tmpname); 
+  $extension=$partes[count($partes)-1]; 
+  $extension = strtolower($extension);
+  array_pop($partes); 
+  $tmpname=implode('',$partes).'.'.$extension; 
+  $name = $tmpname;
+
+  $tipo = $_FILES['imagen']['type'];
+  $tamano = $_FILES['imagen']['size'];
  
+   include('/libraries/SimpleImage.php');
+   $image = new SimpleImage();
+   $image->load($tmpname);
+   $image->resize(300,226);
+   $image->save($directorio.$nombre);
 
     // Muevo la imagen desde su ubicación
 
     // temporal al directorio definitivo
 
-    move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nombre);
+   // move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nombre);
 
   
 
