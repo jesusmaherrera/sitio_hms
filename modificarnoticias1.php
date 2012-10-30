@@ -15,7 +15,7 @@
 <div align="center">
  <form id="form1" method="post" action="modificarnoticias2.php" enctype="multipart/form-data">
                               
-                                	<label>Id<input type="text" name="id" id="id" value="<?php echo $id;?>"/></label>
+                                	<input  type="hidden" name="id" id="id" value="<?php echo $id;?>"/>
                                     <label>Titulo<input type="text" name="titulo" id="titulo" value="<?php echo $titulo;?>"/></label>
                                     <label>Descripción corta<input type="text" name="corta" id="corta" value="<?php echo $corta;?>"/></label>
                                     <textarea name="larga" id="larga" rows="10" placeholder="Escriba aqui la noticia completa" cols="100"><?php echo $larga;?></textarea>

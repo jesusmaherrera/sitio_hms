@@ -23,7 +23,7 @@
 	right:0px;
 	padding:4px 15px;
 	font-weight:bold;
-	background: #ccbda2;
+	background: #FD7FFD;
 	text-align:center;
 	color: white;
 	font-family: "Georgia","Times New Roman",serif;
@@ -34,7 +34,7 @@
 	position:absolute;
 	top:10px;
 	right:10px;
-	background:#fff url(../images/cross.png) no-repeat center center;
+	background:#fff url(../../img/cross.png) no-repeat center center;
 	width:27px;
 	height:27px;
 	text-indent:-9000px;
@@ -92,7 +92,7 @@
 	font-family: 'Coustard', sans-serif;
 	text-transform:uppercase;
 	font-size:30px;
-	color:#000;
+	color:#958AE7;
 	margin-bottom:20px;
 	height:85px;
 	text-align:center;
@@ -103,7 +103,7 @@
 	font-style:italic;
 	font-size:12px;
 	text-align:left;
-	border-left:10px solid #b0ccc6;
+	border-left:10px solid #FD7FFD;
 	padding-left:10px;
 	line-height:24px;
 	margin:10px;
@@ -122,7 +122,7 @@
 	text-indent:0px;
 }
 .ca-content-wrapper{
-	background:#b0ccc6;
+	background:#F8D4EB;
 	position:absolute;
 	width:0px; /* expands to width of the wrapper minus 1 element */
 	height:440px;
@@ -150,10 +150,10 @@
 	margin:25px 20px 0px 35px;
 	font-size:32px;
 	padding-bottom:5px;
-	color:#000;
+	color:#FCFCFC;;
 	font-family: 'Coustard', sans-serif;
-	color:#60817a;
-	border-bottom:2px solid #99bcb4;
+	color:#FCFCFC;;
+	border-bottom:2px solid #FD7FFD;
 	text-shadow: 1px 1px 1px #99BCB4;
 }
 .ca-content ul{
@@ -180,7 +180,7 @@
 .ca-nav span{
 	width:25px;
 	height:38px;
-	background:transparent url(../images/arrows.png) no-repeat top left;
+	background:transparent url(../../img/arrows.png) no-repeat top left;
 	position:absolute;
 	top:50%;
 	margin-top:-19px;

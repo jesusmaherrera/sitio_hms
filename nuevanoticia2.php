@@ -13,7 +13,13 @@ include ('ingreso.php');
     $nombre = $_FILES['imagen']['name'];
     $tipo = $_FILES['imagen']['type'];
     $tamano = $_FILES['imagen']['size'];
- 
+   //CAMBIAR TAMAÑO DE IMAGEN 
+   include('/libraries/SimpleImage.php');
+   $image = new SimpleImage();
+   $image->load($_FILES['imagen']['tmp_name']);
+   $image->resize(250,400);
+   $image->save('picture2.jpg');
+   //-------------------------
     // Muevo la imagen desde su ubicación
     // temporal al directorio definitivo
     move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nombre);
