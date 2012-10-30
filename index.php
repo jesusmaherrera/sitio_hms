@@ -22,10 +22,6 @@
 <div class="container">
 			<h1>Noticias Recientes de <span>Hospital Médica Sierra</span></h1>
 			<div id="ca-container" class="ca-container">
-				<div class="ca-nav">
-					<span class="ca-nav-prev">Previous</span>
-					<span class="ca-nav-next">Next</span>
-				</div>
 				<div class="ca-wrapper">
 					<?php 
 					include("master_db.php");
@@ -68,7 +64,6 @@
 					?>
 				</div>
 			</div>
-			<h5>....</h5>
 		</div>
 
 

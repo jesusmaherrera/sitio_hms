@@ -17,7 +17,7 @@
 
 <div align="center">
 <form id="form1" method="post" action="modificardirectoriomedico2.php">
-                              <label>ID<input type="text" name="id" id="id" value="<?php echo $id;?>"/></label>
+                              <input type="hidden" name="id" id="id" value="<?php echo $id;?>"/>
                                 	<label>Titulo<input type="text" name="titulo" id="titulo" value="<?php echo $titulo;?>"/></label>
                                     <label>Nombre<input type="text" name="nombre" id="nombre" value="<?php echo $nombre;?>"/></label>
                                     <label>Apellido<input type="text" name="apellido" id="apellido" value="<?php echo $apellido;?>"/></label>

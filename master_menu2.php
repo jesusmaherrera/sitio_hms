@@ -20,6 +20,7 @@
 
                   <a class="brand" href="inicio.php">Inicio</a>
 
+<a class="brand" href="vercontactanos.php">Contacto</a>
                   
 
 <ul class="nav" role="navigation">
@@ -47,7 +48,7 @@
 
                     <li class="dropdown">
 
-                      <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown">Directorio Medico<b class="caret"></b></a>
+                      <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown">Directorio<b class="caret"></b></a>
 
                       <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
 

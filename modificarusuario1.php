@@ -19,7 +19,7 @@
                                     <label>Nombre<input type="text" name="nombre" id="nombre" value="<?php echo $nombre;?>"/></label>
                                     <label>Apellido<input type="text" name="apellido" id="apellido" value="<?php echo $apellido;?>"/></label>
                                     <label>Puesto<input type="text" name="puesto" id="puesto" value="<?php echo $puesto;?>"/></label>
-                                    <label>Usuario<input type="text" name="usuario" id="usuario" value="<?php echo $usuario;?>"/></label>
+                                    <input type="hidden" name="usuario" id="usuario" value="<?php echo $usuario;?>"/>
                                		<label>Contraseña<input type="password" name="pass" id="pass"/></label>
                                		<input type="submit" name="registrar" id="registrar" value="Guardar Cambios"/>
                                   

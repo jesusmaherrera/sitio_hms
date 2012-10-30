@@ -38,4 +38,3 @@ include("master_db.php");
 	include("master_segundocontenido2.php");
 	include("master_piepagina.php");
 ?>
-

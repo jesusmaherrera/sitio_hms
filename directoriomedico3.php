@@ -14,7 +14,7 @@
 ?>
 <h2><span><?php echo $titulo;?> </span><?php echo $nombre." ".$apellido;?></h2>
 		<div id="fbox1">
-			<p><img src="images/noticias/noticia1.gif" width="320" height="240" alt="" /></p>
+			<p><img src="images/logohms.png" width="320" height="240" alt="" /></p>
 		</div>
 		<div align="justify">
         	<?php echo "Especialidad: ".$especialidad;?>
