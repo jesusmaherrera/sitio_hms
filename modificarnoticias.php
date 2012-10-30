@@ -17,7 +17,6 @@
 <th align="center" class="tablas">FECHA</th>
 <th align="center" class="tablas">BORRAR</th>
 <th align="center" class="tablas">EDITAR</th>
-<th align="center" class="tablas">CAMBIAR IMAGEN</th>
 </tr>
 
 
@@ -34,7 +33,7 @@
 		while ($consulta=mysql_fetch_array($resultado))
 		{
 		extract($consulta);
-		echo "</td><td align='center'> <img src='images/noticias/".$consulta[1]."' width='200' height='100'></img> <td align='center'>".$consulta[2]."<td align='center'>".$consulta[3]."</td><td align='center'>".$consulta[4]."</td><td align='center'>".$consulta[5]."</td><td align='center'>"."<a href='eliminarnoticias.php?id=$consulta[0]&&nombre=$consulta[1]'><img src='images/borrar.gif'>"."</td><td align='center'>"."<a href='modificarnoticias1.php?id=$consulta[0]&&nombre=$consulta[1]&&titulo=$consulta[2]&&corta=$consulta[3]&&larga=$consulta[4]'><img src='images/editar.png'></td><td align='center'>"."<a href='modificarimagennoticias.php?id=$consulta[0]&&nombre=$consulta[1]'><img src='images/editar.png'></td></tr>\n";  
+		echo "</td><td align='center'><a href='modificarimagennoticias.php?id=$consulta[0]&&nombre=$consulta[1]'><img src='images/noticias/".$consulta[1]."' width='200' height='100'></img></a> <td align='center'>".$consulta[2]."<td align='center'>".$consulta[3]."</td><td align='center'>".$consulta[4]."</td><td align='center'>".$consulta[5]."</td><td align='center'>"."<a href='eliminarnoticias.php?id=$consulta[0]&&nombre=$consulta[1]'><img src='images/borrar.gif'>"."</td><td align='center'>"."<a href='modificarnoticias1.php?id=$consulta[0]&&nombre=$consulta[1]&&titulo=$consulta[2]&&corta=$consulta[3]&&larga=$consulta[4]'><img src='images/editar.png'></td></tr>\n";  
 	}
 }else
 {	 echo "<tr><td align='center'>No existen Datos..</td></tr>";	
