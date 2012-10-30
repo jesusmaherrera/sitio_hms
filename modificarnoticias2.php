@@ -13,12 +13,12 @@ include ('ingreso.php');
 	
 	include("master_db.php");
 	
-	$query="UPDATE noticias SET titulo='$titulo', corta='$corta',larga='$larga' WHERE id=$id";
+	$query="UPDATE noticias SET titulo='$titulo', corta='$corta', larga='$larga' WHERE id=$id";
 	$resultado=mysql_query($query) or die(mysql_error());
 
 	?>
 	<script language="javascript"> alert("EDITADOS");
-	document.location.href="modificardirectoriomedico.php";
+	document.location.href="modificarnoticias.php";
 	</script>
 
 <body>
