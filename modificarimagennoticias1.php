@@ -3,67 +3,56 @@ include ('ingreso.php');
 ?>
 <html>
 <body>
- 
   <?php
   
 $uno=$_POST['id'];
 $actual=$_POST['actual'];
-  // Ruta donde se guardarán las imágenes
-    include('/libraries/configuration.php');
+// Ruta donde se guardarán las imágenes
+include('/libraries/configuration.php');
+
     $directorio = $document_root.'/images/noticias/';
  
-    include("master_db.php");
     // Recibo los datos de la imagen
-
-  $nombre = $_FILES['imagen']['name'];
-  $tmpname = $_FILES['imagen']['tmp_name'];
-  
-  $partes=explode('.',$tmpname); 
-  $extension=$partes[count($partes)-1]; 
-
-   $tipo = $_FILES["imagen"]['type'];
-
-
-  if ($tipo == "image/gif" || $tipo == "image/jpeg" || $tipo == "image/jpg")
-  {
-    array_pop($partes); 
-    $tmpname=implode('',$partes).'.'.$extension; 
-    $name = $tmpname;
-
+    $nombre = $_FILES['imagen']['name'];
     $tipo = $_FILES['imagen']['type'];
     $tamano = $_FILES['imagen']['size'];
+ 
+    // Muevo la imagen desde su ubicación
+    // temporal al directorio definitivo
+    move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nombre);
+///////////////////////////////////////////////////////////
+//                                                       //
+//               CAMBIAR TAMAÑO DE IMAGEN                //
+//                                                       //
+///////////////////////////////////////////////////////////
 
-    include('/libraries/SimpleImage.php');
-    $image = new SimpleImage();
-    $image->load($tmpname);
-    $image->resize(300,226);
-    $image->save($directorio.$nombre);
+include("/libraries/resize-class.php");
+// *** 1) Initialise / load image
+$resizeObj = new resize($directorio.$nombre);
+  //$resizeObj = new resize($directorio.$tmpname);
 
-    $query="UPDATE noticias SET imagen='$nombre' , corta='BIEN' WHERE id=$uno";
-  }
-  else
-  {
+// *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
+$resizeObj -> resizeImage(230, 150, 'auto');
 
-    if (move_uploaded_file($_FILES['imagen']['tmp_name'], $directorio.$nombre)) {
-        print "Received {$_FILES['imagen']['name']} - its size is {$_FILES['imagen']['size']}";
-    } else {
-        print "Upload failed!";
-    }
-    //move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nombre);
-    $query="UPDATE noticias SET imagen='$nombre', corta='MAL' WHERE id=$uno";
-  }
+// *** 3) Save image
+$resizeObj -> saveImage($directorio.$nombre, 100);
+ 
+////////////////////////////////////////////////////////////// 
 
-  include("master_db.php");
-
+include("master_db.php");
   
-    
-	$resultado=mysql_query($query) or die(mysql_error());
+  $query="UPDATE noticias SET imagen='$nombre' WHERE id=$uno";
+  $resultado=mysql_query($query) or die(mysql_error());
   
-   unlink("images/noticias/".$actual);
+   unlink($document_root."/images/noticias/".$actual);
+  
+  
+  
 
-	?>
-	<script language="javascript"> 
-	 document.location.href="modificarnoticias.php";
-	</script>
+
+  ?>
+  <script language="javascript"> alert("EDITADOS");
+  document.location.href="modificarnoticias.php";
+  </script>
 </body>
 </html>
